@@ -1,0 +1,27 @@
+# Ignorar archivos y directorios relacionados con el control de versiones
+.git
+.gitignore
+
+# Ignorar los directorios de dependencias
+node_modules
+
+# Ignorar archivos de configuración local
+.env
+
+# Ignorar archivos y directorios relacionados con los registros
+logs
+*.log
+
+# Ignorar archivos y directorios relacionados con las pruebas
+__tests__
+*.test.js
+*.spec.js
+
+# Ignorar archivos y directorios relacionados con la documentación
+docs
+
+# Ignorar archivos y directorios relacionados con el desarrollo
+*.swp
+*~
+.vscode
+.editorconfig

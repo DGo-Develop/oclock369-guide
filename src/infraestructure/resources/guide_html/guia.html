@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Oclock369</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/popper.min.js">
+    <style>
+        .gray-text {
+            color: #777;
+        }
+
+        .bordered-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #777;
+            padding: 15px;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .bordered-box p {
+            line-height: 0.6;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 20px;
+            justify-content: center;
+        }
+
+        .bordered-column {
+            border: 1px solid #777;
+            padding-top: 2px;
+        }
+
+        .qr-box {
+            border: 1px solid #777;
+            text-align: center;
+            align-items: center;
+        }
+
+        .barcode-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dotted-line {
+            border-bottom: 1px dashed #777;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            padding-top: 30px;
+        }
+
+        .codigo-barras {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            padding-top: 10px;
+        }
+
+        .custom-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #777;
+            text-align: center;
+        }
+
+        .custom-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #777;
+            text-align: center;
+        }
+
+        .custom-row-2 {
+            border: 1px solid #777;
+            padding-bottom: 78px;
+            padding-top: 7px;
+            padding-left: 7px;
+        }
+
+        /* .row>* {
+            padding-right: unset;
+        } */
+
+        .gray-border-columna2 {
+            border: 1px solid #777;
+            text-align: left;
+            display: flex;
+            padding: 11px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Columna 1 -->
+            <div class="col">
+                <!-- Primera Fila -->
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col me-3 logo">
+                        <img src="/img/Logo Oclock.png" alt="Logo" width="100%" />
+                        <p style="font-size: 0.65em; text-align:center"><b><br>OCLOCK369 S.A.S. | NIT
+                                901.616.003-5<br>www.oclock369.com |
+                                info@oclock369.com</b></p>
+                    </div>
+                    <div class="col me-3">
+                        <p style="font-size: 0.7em; padding-top: 40px" class="gray-text"><br>
+                            FECHA RECEPCIÓN: <u>{FECHA_RECEPCION}</u> <u>{H_R}</u><br>
+                            FECHA PROB. ENTREGA:<u> {FECHA_ENTREGA}</u> <u>{H_EE}</u></p>
+                    </div>
+                    <div class="col-3"><br>
+                        <div class="bordered-box">
+                            <p style="font-size: 55px;">{Z_R}</p> <span style="font-size: 20px;" class="gray-text">ZONA
+                                RECOGIDA</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segunda fila -->
+                <div class="row mt-2">
+                    <div class="col-1">
+                        <div class="vertical-text" style="line-height: 4; margin-top: 1.8em;">REMITENTE</div>
+                    </div>
+                    <div class="col-8 bordered-column">
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {NOMBRES_Y_APELLIDOS_REMITENTE}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {DIRECCIÓN_REMITENTE}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {TELÉFONO_REMITENTE}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {CIUDAD_DEPARTAMENTO_PAÍS_REMITENTE}
+                        </span>
+                    </div>
+                    <div class="col-3">
+                        <div class="qr-box">
+                            <img src="{QR_REMITENTE}" alt="Código QR de ejemplo" width="100%" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Tercera fila -->
+                <div class="row mt-1">
+                    <!-- Primera Columna -->
+                    <div class="col-1">
+                    </div>
+                    <!-- Segunda Columna -->
+                    <div class="col me-2 custom-row">
+                        <span style="font-size: 1em; margin: 5px;">INTENTO DE ENTREGA</span>
+                    </div>
+                    <!-- Tercera Columna -->
+                    <div class="col-4 custom-row">
+                        <span style="font-size: 1em; margin: 5px;">CAUSAL DEVOLUCIÓN DE ENVÍO</span>
+                    </div>
+                    <!-- Cuarta Columna -->
+                    <div class="col-3">
+                        <div class="custom-row">
+                            <span style="font-size: 1em; margin: 5px;">No. NOTIFICACIÓN</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cuarta fila -->
+                <div class="row mt-1">
+                    <!-- Primera Columna -->
+                    <div class="col-1">
+                    </div>
+                    <!-- Segunda Columna -->
+                    <div class="col me-3" style="line-height: 0.65">
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text"></p>
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text">DÍA &emsp;/ &emsp;MES &emsp;/
+                            &emsp;AÑO &emsp;/ &emsp;HORA</p>
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text">DÍA &emsp;/ &emsp;MES &emsp;/
+                            &emsp;AÑO &emsp;/ &emsp;HORA</p>
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text">DÍA &emsp;/ &emsp;MES &emsp;/
+                            &emsp;AÑO &emsp;/ &emsp;HORA</p>
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text">FECHA DEVOLUCIÓN REMITENTE</p>
+                        <p style="font-size: 0.85em; text-align:center" class="gray-text">DÍA &emsp;/ &emsp;MES &emsp;/
+                            &emsp;AÑO &emsp;/ &emsp;HORA</p>
+                    </div>
+                    <!-- Tercera Columna -->
+                    <div class="col me-4 mt-1" style="line-height: 0.17">
+                        <p style="font-size: 0.9em;"><b>&ensp; 1 &emsp;&emsp; 2 &emsp;&emsp; 3</b></p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____
+                            &emsp;DESCONOCIDO</p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____
+                            &emsp;REHUSADO</p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____ &emsp;NO
+                            RESIDE</p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____ &emsp;NO
+                            RECLAMADO</p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____
+                            &emsp;DIRECCIÓN ERRADA</p>
+                        <p style="font-size: 0.8em; letter-spacing: -1px">&ensp;____ &emsp; ____ &emsp; ____ &emsp;OTRA
+                            ¿CUÁL?</p>
+                    </div>
+                    <!-- Cuarta Columna -->
+                    <div class="col-3 mt-2">
+                        <hr>
+                        <hr>
+                        <hr>
+                        <div class="custom-row" style="height: 52px;">
+                            <span style="font-size: 0.9em;">VALOR TOTAL</span>
+                            <span style="font-size: 1.5em;"><b>{VR_TOTAL}</b></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quinta fila -->
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col me-3 mt-2">
+                        <div class="row">
+                            <div class="col-4" style="border-bottom: 0.1px solid black;">
+                                <span class="" style="font-size: 1.1em;">{VD_REMITEN}</span>
+                            </div>
+                            <div class="col">
+                                <span class="" style="font-size: 0.9em;">VALOR DECLARADO</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4" style="border-bottom: 0.1px solid black;">
+                                <span class="" style="font-size: 1.1em;">{PESO_KG}</span>
+                            </div>
+                            <div class="col">
+                                <span class="" style="font-size: 0.9em;">PESO (KG)</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4" style="border-bottom: 0.1px solid black;">
+                                <span class="" style="font-size: 1.1em;">{PESO_VOL}</span>
+                            </div>
+                            <div class="col ">
+                                <span class="" style="font-size: 0.9em;">PESO (VOL)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col me-3 mt-2">
+                        <div class="row">
+                            <div class="col-4" style="border-bottom: 0.1px solid black;">
+                                <span class="" style="font-size: 1.1em;">{VR_FLETE}</span>
+                            </div>
+                            <div class="col">
+                                <span class="" style="font-size: 0.9em;">VALOR FLETE</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4" style="border-bottom: 0.1px solid black;">
+                                <span class="" style="font-size: 1.1em;">{NO_REMISION}</span>
+                            </div>
+                            <div class="col">
+                                <span class="" style="font-size: 0.9em;">NÚMERO REMISIÓN</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 mt-2">
+                        <div class="custom-row" style="height: 80px;">
+                            <span style="font-size: 0.9em;">VALOR A RECAUDAR</span>
+                            <span style="font-size: 1.5em;"><b>{VR_RECAUDO}</b></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Columna 2 -->
+            <div class="col">
+                <!-- Primera Fila -->
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col me-3 mt-3">
+                        <div class="codigo-barras">
+                            <img src="{CODIGO_BAR_GUIA}" alt="Código de barras" width="60%" /></img>
+                            <p style="font-size: 1.3em; line-height: 0.8">GUIA {NUMERO_GUIA_EXAMPLE}</p>
+                        </div>
+                    </div>
+                    <div class="col-3"><br>
+                        <div class="bordered-box">
+                            <p style="font-size: 55px;">{Z_E}</p><span style="font-size: 20px;" class="gray-text">ZONA
+                                ENTREGA</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segunda fila -->
+                <div class="row mt-0" style="margin-right: 0;">
+                    <div class="col-1">
+                        <div class="vertical-text" style="line-height: 4; margin-top: 1.25em;">DESTINATARIO</div>
+                    </div>
+                    <div class="col-11 bordered-column">
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {NOMBRES_Y_APELLIDOS_DESTINATARIO}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {DIRECCIÓN_DESTINATARIO}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {TELÉFONO_DESTINATARIO}
+                        </span><br><br>
+                        <span style="font-size: 1.2em;" class="text-uppercase">
+                            {CIUDAD_DEPARTAMENTO_PAÍS_DESTINATARIO}
+                        </span>
+                    </div>
+                </div>
+                <!-- Tercera fila -->
+                <div class="row mt-1" style="margin-right: 0;">
+                    <div class="col-1">
+                    </div>
+                    <div class="col gray-border-columna2">
+                        <div class="container-fluid" style="height: 105px;">
+                            <div class="row">
+                                <p style="font-size: 1em;"><b>DICE CONTENER</b></p>
+                            </div>
+                            <div class="row">
+                                <p style="font-size: 1.2em;" class="text-uppercase">{DICE_CONTENER}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cuarta fila -->
+                <div class="row mt-1" style="margin-right: 0;">
+                    <div class="col-1">
+                    </div>
+                    <div class="col gray-border-columna2">
+                        <div class="container-fluid" style="height: 105px;">
+                            <div class="row">
+                                <p style="font-size: 1em;"><b>OBSERVACIONES EN LA ENTREGA</b></p>
+                            </div>
+                            <div class="row">
+                                <p style="font-size: 1.2em;" class="text-uppercase">{OBSERVACIONES_EN_LA_ENTREGA}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ultima Fila -->
+    <div class="row mt-5 align-items-end gx-5">
+        <div class="col-md-2" style="padding-left:20px">
+            <img src="/img/Logo ST.png" alt="LogoST" style="width: 50%; margin-left: 30px;" />
+        </div>
+        <div class="col-md-2">
+            <span style="font-size: 14px; margin-left: 15px">FIRMA REMITENTE</span>
+        </div>
+        <div class="col-md-4">
+            <span style="font-size: 14px; margin-left: 15px">RECIBÍ A CONFORMIDAD (NOMBRE LEGIBLE, FIRMA, ID,
+                SELLO)</span>
+        </div>
+        <div class="col-md-2">
+            <span style="font-size: 14px; margin-left: 15px">FIRMA DESTINATARIO</span>
+        </div>
+        <div class="col-md-2">
+            <span style="font-size: 14px; margin-left: 15px">QUIEN ENTREGA</span>
+        </div>
+    </div>
+</body>
+
+</html>

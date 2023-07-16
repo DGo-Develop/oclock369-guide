@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+.cache
+.npm
+
+# Production build
+build
+dist
+public
+
+# Logs
+*.log
+
+# Testing files
+coverage
+.env.test
+.env.local
+.env.development.local
+
+# Editor and IDE files
+.vscode
+.idea
+*.iml
+
+# Other build artifacts
+*.map
+*.d.ts
+*.pyc
+
+# Enviroment locals
+.env
+
+# Miscellaneous
+.DS_Store
+*.class
+Thumbs.db
